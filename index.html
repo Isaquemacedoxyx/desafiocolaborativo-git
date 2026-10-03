@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#f5f4ed">
+	<title>Projeto em conjunto</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			color-scheme: light;
+			--paper: #f5f4ed;
+			--ink: #202b25;
+			--muted: #68736b;
+			--line: #d9ddd3;
+			--green: #246447;
+			--green-light: #e4eee5;
+			--orange: #cf6b45;
+			--white: #fffefa;
+		}
+
+		* { box-sizing: border-box; }
+
+		body {
+			margin: 0;
+			min-height: 100vh;
+			color: var(--ink);
+			background-color: var(--paper);
+			background-image: radial-gradient(#a9b7a71c 0.8px, transparent 0.8px);
+			background-size: 17px 17px;
+			font-family: "DM Sans", sans-serif;
+		}
+
+		button { font: inherit; }
+
+		.page { width: min(100% - 48px, 1040px); margin: 0 auto; }
+
+		header {
+			height: 76px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			border-bottom: 1px solid var(--line);
+		}
+
+		.brand { display: flex; align-items: center; gap: 11px; font-weight: 700; }
+
+		.brand-mark {
+			display: grid;
+			width: 34px;
+			aspect-ratio: 1;
+			place-items: center;
+			border-radius: 10px;
+			background: var(--green);
+			color: white;
+			font-size: 19px;
+		}
+
+		.header-note { color: var(--muted); font-size: 13px; }
+
+		main { padding: 56px 0 68px; }
+
+		.intro {
+			display: grid;
+			grid-template-columns: minmax(0, 1fr) 218px;
+			align-items: end;
+			gap: 30px;
+			margin-bottom: 38px;
+		}
+
+		.eyebrow {
+			margin: 0 0 12px;
+			color: var(--green);
+			font-size: 11px;
+			font-weight: 700;
+			letter-spacing: 1.5px;
+			text-transform: uppercase;
+		}
+
+		h1 {
+			max-width: 650px;
+			margin: 0;
+			font-family: "Fraunces", Georgia, serif;
+			font-size: clamp(38px, 6vw, 62px);
+			font-weight: 600;
+			line-height: 1.02;
+		}
+
+		.intro-copy { max-width: 600px; margin: 15px 0 0; color: var(--muted); line-height: 1.65; }
+
+		.team-stamp {
+			display: flex;
+			align-items: center;
+			gap: 13px;
+			padding: 15px;
+			border: 1px solid var(--line);
+			border-radius: 8px;
+			background: #fffefaad;
+		}
+
+		.stamp-dots { display: flex; padding-left: 5px; }
+
+		.stamp-dots i {
+			width: 24px;
+			height: 24px;
+			margin-left: -5px;
+			border: 2px solid var(--paper);
+			border-radius: 50%;
+			background: var(--green);
+		}
+
+		.stamp-dots i:nth-child(2) { background: #d88b62; }
+		.stamp-dots i:nth-child(3) { background: #8b9b66; }
+		.stamp-dots i:nth-child(4) { background: #d7b84f; }
+		.stamp-dots i:nth-child(5) { background: #7b91a1; }
+
+		.team-stamp strong { display: block; font-size: 13px; }
+		.team-stamp span { display: block; margin-top: 2px; color: var(--muted); font-size: 11px; }
+
+		.workspace {
+			display: grid;
+			grid-template-columns: minmax(0, 1.45fr) minmax(270px, 0.8fr);
+			gap: 40px;
+			align-items: start;
+		}
+
+		.section-heading {
+			display: flex;
+			align-items: baseline;
+			justify-content: space-between;
+			gap: 12px;
+			margin-bottom: 13px;
+		}
+
+		h2 { margin: 0; font-size: 18px; }
+		.section-heading p { margin: 0; color: var(--muted); font-size: 12px; }
+
+		.member-list { border-top: 1px solid var(--line); }
+
+		.member {
+			display: grid;
+			grid-template-columns: 36px minmax(95px, 1fr) minmax(120px, 1.2fr) 34px;
+			align-items: center;
+			gap: 12px;
+			min-height: 68px;
+			border-bottom: 1px solid var(--line);
+		}
+
+		.avatar {
+			display: grid;
+			width: 34px;
+			aspect-ratio: 1;
+			place-items: center;
+			border-radius: 50%;
+			background: var(--green-light);
+			color: var(--green);
+			font-size: 12px;
+			font-weight: 700;
+		}
+
+		.member:nth-child(2) .avatar { background: #f5e6de; color: #a84d2c; }
+		.member:nth-child(3) .avatar { background: #e8ecd9; color: #56652e; }
+		.member:nth-child(4) .avatar { background: #eee8d2; color: #75601a; }
+		.member:nth-child(5) .avatar { background: #e3eaf0; color: #456478; }
+
+		.member-name { font-size: 13px; font-weight: 600; }
+
+		.branch-name {
+			overflow: hidden;
+			color: var(--muted);
+			font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+			font-size: 11px;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		.copy-button {
+			display: grid;
+			width: 32px;
+			height: 32px;
+			place-items: center;
+			border: 1px solid transparent;
+			border-radius: 6px;
+			background: transparent;
+			color: var(--muted);
+			cursor: pointer;
+		}
+
+		.copy-button:hover, .copy-button:focus-visible { border-color: var(--line); background: var(--white); color: var(--green); }
+		.copy-button svg { width: 16px; height: 16px; }
+
+		.workflow { padding: 20px; border-radius: 8px; background: var(--green); color: white; }
+		.workflow h2 { font-size: 17px; }
+		.workflow > p { margin: 7px 0 17px; color: #d3e4d7; font-size: 12px; line-height: 1.5; }
+
+		.step { display: grid; grid-template-columns: 25px 1fr; gap: 10px; padding: 12px 0; border-top: 1px solid #ffffff35; }
+
+		.step-number {
+			display: grid;
+			width: 23px;
+			height: 23px;
+			place-items: center;
+			border-radius: 50%;
+			background: #ffffff1f;
+			color: #fff;
+			font-size: 11px;
+			font-weight: 700;
+		}
+
+		.step strong { display: block; margin: 2px 0 6px; font-size: 12px; }
+
+		code {
+			display: block;
+			overflow-wrap: anywhere;
+			color: #f4d7a7;
+			font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+			font-size: 10px;
+			line-height: 1.6;
+		}
+
+		.tip { display: flex; gap: 9px; margin-top: 15px; padding: 12px; border: 1px solid var(--line); border-radius: 7px; color: var(--muted); font-size: 11px; line-height: 1.5; }
+		.tip b { color: var(--orange); }
+
+		footer { padding: 17px 0 26px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+
+		.toast {
+			position: fixed;
+			right: 24px;
+			bottom: 22px;
+			padding: 11px 15px;
+			border-radius: 6px;
+			background: var(--ink);
+			color: white;
+			font-size: 13px;
+			opacity: 0;
+			pointer-events: none;
+			transform: translateY(8px);
+			transition: opacity 160ms ease, transform 160ms ease;
+		}
+
+		.toast.show { opacity: 1; transform: translateY(0); }
+
+		@media (max-width: 700px) {
+			.page { width: min(100% - 32px, 520px); }
+			header { height: 64px; }
+			.header-note { max-width: 145px; text-align: right; }
+			main { padding: 38px 0 46px; }
+			.intro { grid-template-columns: 1fr; gap: 18px; margin-bottom: 30px; }
+			.team-stamp { width: fit-content; }
+			.workspace { grid-template-columns: 1fr; gap: 30px; }
+		}
+
+		@media (max-width: 430px) {
+			.member { grid-template-columns: 34px minmax(76px, 1fr) minmax(98px, 1.15fr) 32px; gap: 8px; }
+			.branch-name { font-size: 10px; }
+			.section-heading p { max-width: 130px; text-align: right; line-height: 1.4; }
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			*, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+		}
+	</style>
+</head>
+<body>
+	<div class="page">
+		<header>
+			<div class="brand"><span class="brand-mark" aria-hidden="true">+</span><span>Projeto em conjunto</span></div>
+			<div class="header-note">Um espaço para construir em equipe</div>
+		</header>
+
+		<main>
+			<section class="intro" aria-labelledby="page-title">
+				<div>
+					<p class="eyebrow">Nosso cantinho no GitHub</p>
+					<h1 id="page-title">Cinco pessoas.<br>Um projeto só.</h1>
+					<p class="intro-copy">Cada pessoa cuida da sua branch. Quando uma parte estiver pronta, é só abrir um pull request e juntar as ideias.</p>
+				</div>
+				<aside class="team-stamp" aria-label="Equipe com cinco pessoas">
+					<div class="stamp-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+					<div><strong>Time de 5</strong><span>Trabalhando em paralelo</span></div>
+				</aside>
+			</section>
+
+			<div class="workspace">
+				<section aria-labelledby="team-title">
+					<div class="section-heading">
+						<h2 id="team-title">Nossa equipe</h2>
+						<p>Troquem os nomes direto no arquivo</p>
+					</div>
+					<div class="member-list">
+						<div class="member"><span class="avatar">01</span><span class="member-name">Pessoa 1</span><span class="branch-name">feature/pessoa-1</span><button class="copy-button" data-branch="feature/pessoa-1" aria-label="Copiar branch feature/pessoa-1" title="Copiar nome da branch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5H5v11h3"/></svg></button></div>
+						<div class="member"><span class="avatar">02</span><span class="member-name">Pessoa 2</span><span class="branch-name">feature/pessoa-2</span><button class="copy-button" data-branch="feature/pessoa-2" aria-label="Copiar branch feature/pessoa-2" title="Copiar nome da branch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5H5v11h3"/></svg></button></div>
+						<div class="member"><span class="avatar">03</span><span class="member-name">Pessoa 3</span><span class="branch-name">feature/pessoa-3</span><button class="copy-button" data-branch="feature/pessoa-3" aria-label="Copiar branch feature/pessoa-3" title="Copiar nome da branch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5H5v11h3"/></svg></button></div>
+						<div class="member"><span class="avatar">04</span><span class="member-name">Pessoa 4</span><span class="branch-name">feature/pessoa-4</span><button class="copy-button" data-branch="feature/pessoa-4" aria-label="Copiar branch feature/pessoa-4" title="Copiar nome da branch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5H5v11h3"/></svg></button></div>
+						<div class="member"><span class="avatar">05</span><span class="member-name">Pessoa 5</span><span class="branch-name">feature/pessoa-5</span><button class="copy-button" data-branch="feature/pessoa-5" aria-label="Copiar branch feature/pessoa-5" title="Copiar nome da branch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5H5v11h3"/></svg></button></div>
+					</div>
+					<div class="tip"><b>Uma dica</b><span>Combinem quem vai cuidar de cada parte e evitem editar o mesmo trecho ao mesmo tempo.</span></div>
+				</section>
+
+				<aside class="workflow" aria-labelledby="workflow-title">
+					<h2 id="workflow-title">O caminho de cada mudança</h2>
+					<p>Três passos para trabalhar sem atropelar o código de ninguém.</p>
+					<div class="step"><span class="step-number">1</span><div><strong>Atualize a branch principal</strong><code>git switch main<br>git pull</code></div></div>
+					<div class="step"><span class="step-number">2</span><div><strong>Crie sua branch</strong><code>git switch -c feature/seu-nome</code></div></div>
+					<div class="step"><span class="step-number">3</span><div><strong>Publique e peça revisão</strong><code>git push -u origin feature/seu-nome</code></div></div>
+				</aside>
+			</div>
+		</main>
+
+		<footer>Feito junto, passo a passo.</footer>
+	</div>
+	<div class="toast" role="status" aria-live="polite"></div>
+
+	<script>
+		const toast = document.querySelector('.toast');
+		let toastTimer;
+
+		document.querySelectorAll('.copy-button').forEach((button) => {
+			button.addEventListener('click', async () => {
+				try {
+					await navigator.clipboard.writeText(button.dataset.branch);
+					toast.textContent = `Branch copiada: ${button.dataset.branch}`;
+					toast.classList.add('show');
+					clearTimeout(toastTimer);
+					toastTimer = setTimeout(() => toast.classList.remove('show'), 2000);
+				} catch {
+					toast.textContent = 'Não foi possível copiar. Selecione o nome da branch.';
+					toast.classList.add('show');
+					clearTimeout(toastTimer);
+					toastTimer = setTimeout(() => toast.classList.remove('show'), 2500);
+				}
+			});
+		});
+	</script>
+</body>
+</html>
