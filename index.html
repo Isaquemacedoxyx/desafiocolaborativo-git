@@ -223,7 +223,43 @@
 		.tip { display: flex; gap: 9px; margin-top: 15px; padding: 12px; border: 1px solid var(--line); border-radius: 7px; color: var(--muted); font-size: 11px; line-height: 1.5; }
 		.tip b { color: var(--orange); }
 
-		footer { padding: 17px 0 26px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+		footer {
+    padding: 24px 0 36px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    gap: 16px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links a {
+    color: var(--green);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-links a:hover {
+    color: var(--orange);
+    text-decoration: underline;
+}
 
 		.toast {
 			position: fixed;
@@ -308,7 +344,16 @@
 			</div>
 		</main>
 
-		<footer>Feito junto, passo a passo.</footer>
+		<footer>
+    <div class="footer-content">
+        <p>&copy; 2026 Projeto Colaborativo. Desenvolvido em equipe no GitHub.</p>
+        <ul class="footer-links">
+            <li><a href="https://github.com/isaquemacedoxyx/desafiocolaborativo-git" target="_blank">Repositório GitHub</a></li>
+            <li><a href="#page-title">Voltar ao topo</a></li>
+        </ul>
+    </div>
+</footer>
+		
 	</div>
 	<div class="toast" role="status" aria-live="polite"></div>
 

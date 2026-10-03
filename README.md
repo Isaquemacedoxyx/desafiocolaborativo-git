@@ -26,3 +26,7 @@ Nosso objetivo foi aprender a organizar o trabalho em equipe usando controle de 
 - Revisão de código
 - Resolução de conflitos
 - Estrutura básica de HTML
+=======
+- Abra index.html no navegador para visualizar a página.
+- O README agora serve como documentação resumida do projeto.
+- A interface principal foi separada em um arquivo HTML válido e pronto
