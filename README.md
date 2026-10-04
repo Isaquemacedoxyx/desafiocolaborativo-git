@@ -1,44 +1,45 @@
-Documentação do Componente de Rodapé (Footer)
+# Documentação do Componente: Tabela de Redes Sociais
 
-Este documento detalha a estrutura, tecnologias e instruções de integração do componente de rodapé (footer) desenvolvido para o projeto acadêmico de HTML. O componente foi projetado com foco em responsividade, semântica e facilidade de manutenção.
+Este documento detalha a estrutura da tabela de redes sociais desenvolvida exclusivamente em HTML para o projeto acadêmico. A construção prioriza a semântica da linguagem, garantindo acessibilidade e clareza na organização dos dados.
 
 Tecnologias Utilizadas
 
-HTML5: Empregado para a marcação semântica estrutural (utilização de tags como , ,  e ).
-
-CSS3: Utilizado para a estilização do componente. O layout foi construído utilizando o módulo Flexbox, garantindo a adaptação adequada do conteúdo em diferentes resoluções de tela.
+HTML5: Utilizado de forma pura e exclusiva, sem a interferência de CSS ou JavaScript, empregando atributos nativos de formatação estrutural de tabelas.
 
 Estrutura do Componente
 
-O rodapé está organizado em uma estrutura de contêineres flexíveis, dividido nas seguintes seções:
+O componente foi estruturado utilizando as tags semânticas de tabela do HTML5:
 
-Sobre o Projeto: Bloco de texto destinado a uma breve descrição do escopo do site.
+<table>: Contêiner principal que define a tabela. Foram aplicados atributos como border, cellpadding e cellspacing para garantir a legibilidade visual básica diretamente pelo HTML.
 
-Links Úteis: Menu de navegação secundária para as páginas principais.
+<thead>: Agrupa o cabeçalho da tabela.
 
-Contato: Lista de links para e-mail corporativo/acadêmico e perfis em redes sociais.
+<tbody>: Agrupa o corpo principal contendo os dados.
 
-Direitos Autorais (Copyright): Barra inferior contendo o ano de vigência e os direitos reservados da equipe.
+<tr>: Define as linhas da tabela (Table Row).
+
+<th>: Define as células de cabeçalho (Table Header), aplicadas na primeira linha para identificar as colunas.
+
+<td>: Define as células de dados (Table Data), contendo as informações de cada rede social.
+
+<a>: Define os hiperlinks (Anchor) para redirecionar o usuário às respectivas redes ou abrir o cliente de e-mail. O atributo target="_blank" foi incluído nos links externos para que abram em uma nova aba.
+
+Conteúdo da Tabela
+
+A tabela está dividida em três colunas principais:
+
+Plataforma: O nome da rede social ou canal de comunicação.
+
+Link / Contato: O hiperlink direto para o perfil ou o endereço de e-mail.
+
+Finalidade: Uma breve descrição do propósito daquele canal (ex: acadêmico, profissional, repositório).
 
 Instruções de Integração
 
-Para incorporar este componente ao projeto principal, siga as etapas abaixo:
+Para incorporar a tabela ao seu projeto:
 
-Estilização (CSS):
-Extraia o bloco de código contido entre as tags <style> do arquivo fornecido e insira-o no arquivo CSS principal do projeto, ou na respectiva seção de estilos do cabeçalho (<head>).
+Copie o bloco de código que inicia na tag <table> e termina em </table>.
 
-Estrutura (HTML):
-Copie integralmente o elemento <footer class="site-footer"> até o seu fechamento </footer>.
+Cole o código no local desejado dentro da seção <body> da sua página principal.
 
-Posicionamento:
-Cole o código HTML extraído no final do documento principal, imediatamente antes do fechamento da tag </body>, assegurando que ele suceda o conteúdo da tag <main>.
-
-Diretrizes de Customização
-
-O código foi parametrizado de forma simples para facilitar alterações visuais. Para modificar o esquema de cores:
-
-Cor de fundo principal: Altere o valor da propriedade background-color na classe .site-footer.
-
-Cor da fonte principal: Altere o valor da propriedade color na classe .site-footer.
-
-Cor de destaque (Hover e sublinhados): Altere a cor das propriedades nas classes .footer-section h3 (border-bottom) e .footer-section ul li a:hover (color).
+Substitua os atributos href contendo os links de exemplo pelas URLs reais dos perfis do seu grupo.
