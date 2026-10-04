@@ -45,3 +45,12 @@ Copie o bloco de código que inicia na tag <table> e termina em </table>.
 Cole o código no local desejado dentro da seção <body> da sua página principal.
 
 Substitua os atributos href contendo os links de exemplo pelas URLs reais dos perfis do seu grupo.
+=======
+# Projeto em conjunto
+
+Página do desafio colaborativo em Git.
+
+- Abra index.html no navegador para visualizar a página.
+- O README agora serve como documentação resumida do projeto.
+- A interface principal foi separada em um arquivo HTML válido e pronto.
+
