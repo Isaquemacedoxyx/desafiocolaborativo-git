@@ -1,4 +1,6 @@
-# Documentação do Componente: Tabela de Redes Sociais
+# Desafio Colaborativo 
+
+Documentação do Componente: Tabela de Redes Sociais
 
 Este documento detalha a estrutura da tabela de redes sociais desenvolvida exclusivamente em HTML para o projeto acadêmico. A construção prioriza a semântica da linguagem, garantindo acessibilidade e clareza na organização dos dados.
 
