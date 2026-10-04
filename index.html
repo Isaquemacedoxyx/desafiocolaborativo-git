@@ -1,3 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabela de Redes Sociais</title>
+</head>
+<body>
+
+    <h2>Contatos e Redes Sociais</h2>
+    
+    <!-- Início da Tabela de Redes Sociais -->
+    <table border="1" cellpadding="10" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th align="left">Plataforma</th>
+                <th align="left">Link / Contato</th>
+                <th align="left">Finalidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>GitHub</strong></td>
+                <td><a href="https://github.com/usuario-do-grupo" target="_blank">Acessar Repositório</a></td>
+                <td>Hospedagem do código-fonte e versionamento do projeto acadêmico.</td>
+            </tr>
+            <tr>
+                <td><strong>LinkedIn</strong></td>
+                <td><a href="https://linkedin.com/in/usuario-do-grupo" target="_blank">Perfil Profissional</a></td>
+                <td>Networking e portfólio profissional da equipe.</td>
+            </tr>
+            <tr>
+                <td><strong>E-mail Institucional</strong></td>
+                <td><a href="mailto:contato@faculdade.edu.br">contato@faculdade.edu.br</a></td>
+                <td>Canal oficial para comunicação sobre o trabalho.</td>
+            </tr>
+            <tr>
+                <td><strong>Instagram</strong></td>
+                <td><a href="https://instagram.com/usuario-do-grupo" target="_blank">@usuario-do-grupo</a></td>
+                <td>Bastidores do desenvolvimento e comunicação informal.</td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- Fim da Tabela de Redes Sociais -->
+
+</body>
+</html>
+=======
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -223,7 +270,43 @@
 		.tip { display: flex; gap: 9px; margin-top: 15px; padding: 12px; border: 1px solid var(--line); border-radius: 7px; color: var(--muted); font-size: 11px; line-height: 1.5; }
 		.tip b { color: var(--orange); }
 
-		footer { padding: 17px 0 26px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+		footer {
+    padding: 24px 0 36px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    gap: 16px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links a {
+    color: var(--green);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-links a:hover {
+    color: var(--orange);
+    text-decoration: underline;
+}
 
 		.toast {
 			position: fixed;
@@ -277,9 +360,9 @@
 					<h1 id="page-title">Aprendendo Git<br>em equipe.</h1>
 					<p class="intro-copy">Esse projeto foi pensado para mostrar como funciona a colaboração no GitHub, com branches, revisão e entrega em conjunto. A parte de edição de texto também foi integrada na branch de atualização, sem perder a contribuição dos demais integrantes.</p>
 				</div>
-				<aside class="team-stamp" aria-label="Equipe do projeto">
-					<div class="stamp-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-					<div><strong>4 integrantes</strong><span>Isaque, Thales, João e Pedro</span></div>
+				<aside class="team-stamp" aria-label="Equipe com cinco pessoas">
+					<div class="stamp-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+					<div><strong>Time de 5</strong><span>Trabalhando em paralelo</span></div>
 				</aside>
 			</section>
 
@@ -287,7 +370,7 @@
 				<section aria-labelledby="team-title">
 					<div class="section-heading">
 						<h2 id="team-title">Nossa equipe</h2>
-						<p>Projeto colaborativo</p>
+						<p>Troquem os nomes direto no arquivo</p>
 					</div>
 					<div class="member-list">
 						<div class="member"><span class="avatar">I</span><span class="member-name">Isaque</span><span class="branch-name">Edição e atualização</span><span class="branch-name">atualizar-editar-texto</span></div>
@@ -299,16 +382,25 @@
 				</section>
 
 				<aside class="workflow" aria-labelledby="workflow-title">
-					<h2 id="workflow-title">Sobre o projeto</h2>
-					<p>O HTML é simples, mas a ideia é prática: aprender a colaborar, dividir tarefas e unir ideias de forma organizada.</p>
-					<div class="step"><span class="step-number">1</span><div><strong>Divisão</strong><code>Cada pessoa cuida de uma parte.</code></div></div>
-					<div class="step"><span class="step-number">2</span><div><strong>Trabalho</strong><code>Branch própria para cada mudança.</code></div></div>
-					<div class="step"><span class="step-number">3</span><div><strong>Entrega</strong><code>Revisão e integração final no GitHub.</code></div></div>
+					<h2 id="workflow-title">O caminho de cada mudança</h2>
+					<p>Três passos para trabalhar sem atropelar o código de ninguém.</p>
+					<div class="step"><span class="step-number">1</span><div><strong>Atualize a branch principal</strong><code>git switch main<br>git pull</code></div></div>
+					<div class="step"><span class="step-number">2</span><div><strong>Crie sua branch</strong><code>git switch -c feature/seu-nome</code></div></div>
+					<div class="step"><span class="step-number">3</span><div><strong>Publique e peça revisão</strong><code>git push -u origin feature/seu-nome</code></div></div>
 				</aside>
 			</div>
 		</main>
 
-		<footer>Feito junto, passo a passo.</footer>
+		<footer>
+    <div class="footer-content">
+        <p>&copy; 2026 Projeto Colaborativo. Desenvolvido em equipe no GitHub.</p>
+        <ul class="footer-links">
+            <li><a href="https://github.com/isaquemacedoxyx/desafiocolaborativo-git" target="_blank">Repositório GitHub</a></li>
+            <li><a href="#page-title">Voltar ao topo</a></li>
+        </ul>
+    </div>
+</footer>
+		
 	</div>
 	<div class="toast" role="status" aria-live="polite"></div>
 
@@ -335,3 +427,4 @@
 	</script>
 </body>
 </html>
+
